@@ -56,7 +56,7 @@ window.onload = function() {
 
     //draw initial player
     context.fillStyle="skyblue";
-    context.fillRect(player.x, player.y, playerWidth, playerHeight);
+    context.fillRect(player.x, player.y, player.width, player.height);
 
     requestAnimationFrame(update);
     document.addEventListener("keydown", movePlayer);
@@ -99,7 +99,7 @@ function update() {
         // if ball touches left or right of canvas
         ball.velocityX *= -1; //reverse direction
     }
-    else if (ball.y + ball.height >= boardWidth) {
+    else if (ball.y + ball.height >= boardHeight) {
         // if ball touches bottom of canvas
         context.font = "20px sans-serif";
         context.fillText("Game Over: Press 'Space' to Restart", 80, 400);
